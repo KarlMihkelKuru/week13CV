@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karl-Mihkel Kuru CV - Mobiilivaade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <hr>
+            <h1 id="full-name"></h1>
+            <p class="subtitle">Production specialist</p>
+            <hr>
+        </header>
+
+        <div class="profile-pic">
+            <img src="images/1.jpg" alt="Koer">
+        </div>
+
+        <hr>
+
+        <section class="contact">
+            <h2>Contact</h2>
+            <p id="contact-address"></p>
+            <p id="contact-email"></p>
+            <p id="contact-phone"></p>
+        </section>
+
+        <hr>
+
+        <section class="profile">
+            <h2>Profile</h2>
+            <p>Tincidunt eget at, in nibh id felis, Morbi In consectetur urna. Quisque turpis massa Donec dui amet, nisl. at, Vestibulum. Fauicbus sit vitae tempor dolor tincidunt in maximus non at quam sit Ut elit odio dolor Ut in id tincidunt id facilisis sit.</p>
+        </section>
+
+        <section class="experience">
+            <h2>Professional Experience</h2>
+            <div class="item">
+                <h3>Job 1</h3>
+                <p>Sed tincidunt sed ex amet, ex placerat maximus odio sit viverra nisl. nibh urna ipsum ex orci tincidunt ex libero, nisl.</p>
+            </div>
+            <div class="item">
+                <h3>Job 2</h3>
+                <p>Sed tincidunt sed ex amet, ex placerat maximus odio sit viverra nisl. nibh urna ipsum ex orci tincidunt ex libero, nisl.</p>
+            </div>
+        </section>
+
+        <section class="expertise">
+            <h2>Expertise</h2>
+            <div class="item">
+                <h3>Professional</h3>
+                <p>Nunc ipsum non amet, amet, est. dignissim, Praesent ullamcorper diam quis maximus placerat. sollicitudin. orci tincidunt.</p>
+            </div>
+            <div class="item">
+                <h3>Technical</h3>
+                <p>Nunc ipsum non amet, amet, est. dignissim, Praesent ullamcorper diam quis maximus placerat. sollicitudin. orci tincidunt.</p>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <div class="item">
+                <h3>School 1</h3>
+                <p>Venenatis ullamcorper ex adipiscing odio eu libero, diam risus porta Sed elit orci ex. Nam elit. ex non, sed placerat.</p>
+            </div>
+            <div class="item">
+                <h3>School 2</h3>
+                <p>Venenatis ullamcorper ex adipiscing odio eu libero, diam risus porta Sed elit orci ex. Nam elit. ex non, sed placerat.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        fetch('profile.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('full-name').textContent = data.firstName + ' ' + data.lastName;
+                document.getElementById('contact-address').textContent = data.address;
+                document.getElementById('contact-email').textContent = data.email;
+                document.getElementById('contact-phone').textContent = data.phone;
+            });
+    </script>
+</body>
+</html>
